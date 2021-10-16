@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+  
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  [hidden] {
+    display: none !important;
+  }
+  
+  A {
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba($color: black, $alpha: 0);
+  
+    &:hover {
+      border-color: rgba($color: black, $alpha: 1.0);
+    }
+  }
+  
+  BODY {
+    margin: 0;
+  }
+  
+  H2 {
+    margin-top: 0;
+  }
+  
+  P,
+  UL {
+    margin: 0;
+    padding: 0;
+  }
+  
+  summary::marker {
+    display: none;
+  }
+  
+  UL {
+    list-style-type: none;
+  }

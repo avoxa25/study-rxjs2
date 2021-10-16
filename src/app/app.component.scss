@@ -1,8 +1,15 @@
 .main {
-    &-wrapper {
-        display: flex;
-        justify-content: space-around;
-        
-        width: 100%;
+  &-wrapper {
+    padding: 15px;
+  }
+
+  &-inner {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    &>* {
+      width: 50%;
     }
+  }
 }
