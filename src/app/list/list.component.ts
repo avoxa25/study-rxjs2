@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { switchMap, map, tap } from 'rxjs/operators'
+import { ListService, IDataList } from '../list.service';
 
 @Component({
   selector: 'app-list',
@@ -9,29 +8,14 @@ import { switchMap, map, tap } from 'rxjs/operators'
 })
 
 export class ListComponent implements OnInit {
-  private items$: Subject<DataList>;
-  public dataArray: DataList[];
-  public dataString: string;
+  public dataArray: IDataList[];
 
-  constructor() {
+  constructor(private listService: ListService) {
     this.dataArray = [];
-    this.dataString = '';
-    this.items$ = new Subject<DataList>();
   }
 
   ngOnInit() {
-    this.items$.subscribe(value => this.dataArray.push(value));
+    this.listService.getStream().subscribe(value => this.dataArray.push(value));
   }
 
-  public addData() {
-    const data = {
-      value: this.dataString,
-      date: new Date().toLocaleString(),
-    }
-    this.items$.next(data);
-  }
-}
-interface DataList {
-  value: string,
-  date: string,
 }
