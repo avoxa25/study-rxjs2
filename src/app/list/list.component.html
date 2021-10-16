@@ -1,3 +1,19 @@
-<p>
-  list works!
-</p>
+<section class="list-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <td>Value</td>
+        <td>Date</td>
+      </tr>
+    </thead>
+    <tbody *ngIf="dataArray.length > 0; else noDataBlock">
+        <tr *ngFor="let item of dataArray">
+          <td>{{item.value}}</td>
+          <td>{{item.date.toLocaleDateString()}}</td>
+      </tr>
+    </tbody>
+    <ng-template #noDataBlock>There is no data yet</ng-template>
+  </table>
+  
+  <button (click)="addData()">Click</button>
+</section>
