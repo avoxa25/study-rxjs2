@@ -1,4 +1,5 @@
 <section class="list-wrapper">
+  <h2>Data list:</h2>
   <table>
     <thead>
       <tr>
@@ -9,11 +10,12 @@
     <tbody *ngIf="dataArray.length > 0; else noDataBlock">
         <tr *ngFor="let item of dataArray">
           <td>{{item.value}}</td>
-          <td>{{item.date.toLocaleDateString()}}</td>
+          <td>{{item.date}}</td>
       </tr>
     </tbody>
     <ng-template #noDataBlock>There is no data yet</ng-template>
   </table>
   
+  <input type="text" [(ngModel)]="dataString" placeholder="Input data..."/>
   <button (click)="addData()">Click</button>
 </section>
