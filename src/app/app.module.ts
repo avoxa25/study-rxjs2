@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     AppComponent,
-      ListComponent
+      ListComponent,
+      InputComponent
    ],
   imports: [
     BrowserModule,
