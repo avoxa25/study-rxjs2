@@ -5,4 +5,14 @@
 
     padding: 15px;
   }
+
+  &-table {
+      width: 100%;
+
+      td {
+        width: 50%;
+
+        background-color: lightcyan;
+      }
+  }
 }
