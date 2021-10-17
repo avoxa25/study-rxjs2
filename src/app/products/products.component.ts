@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduct, productArray } from '../mock';
+import { PopupService } from '../popup.service';
 
 @Component({
   selector: 'app-products',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  public products: IProduct[]
 
-  constructor() { }
+  constructor(private popupService: PopupService) {
+    this.products = productArray;
+  }
 
   ngOnInit() {
+  }
+
+  public changeProduct(product: IProduct): void {
+    this.popupService.addData(product);
   }
 
 }

@@ -1,3 +1,8 @@
-<p>
-  products works!
-</p>
+<ul class="products-list">
+  <li class="products-item" *ngFor="let product of products">
+    <img [src]="product.image" [alt]="product.name" width="auto" height="200">
+    <h2>{{product.name}}</h2>
+    <p>${{product.price}}</p>
+    <button (click)="changeProduct(product)">More info</button>
+  </li>
+</ul>
