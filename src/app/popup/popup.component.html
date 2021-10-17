@@ -1,3 +1,8 @@
-<p>
-  popup works!
-</p>
+<section class="popup-wrapper" [hidden]="isHidden? true: false" *ngIf="product">
+  <div class="popup-inner">
+    <h2>{{product.name}}</h2>
+    <img [src]="product.image">
+    <p>$ {{product.price}}</p>
+    <button (click)="close()">Close</button>
+  </div>
+</section>
